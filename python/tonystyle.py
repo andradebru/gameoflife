@@ -1,9 +1,3 @@
-# game of life rules
-# A live cell dies if it has fewer than two live neighbors.
-# A live cell with two or three live neighbors lives on to the next generation.
-# A live cell with more than three live neighbors dies.
-# A dead cell will be brought back to live if it has exactly three live neighbors.
-
 import os
 import time
 
@@ -16,7 +10,7 @@ def init_matrix():
         [0, 1, 1, 1, 0, 0],
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
-]
+    ]
 
 matrix = init_matrix()
 
