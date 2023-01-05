@@ -4,6 +4,7 @@
 # A live cell with more than three live neighbors dies.
 # A dead cell will be brought back to live if it has exactly three live neighbors.
 
+import os
 import time
 
 def init_matrix():
@@ -26,6 +27,9 @@ def print_matrix(matrix):
 
 def pause():
     time.sleep(0.5)
+
+def clean_matrix():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def count_alive_neighbours(matrix, i, j):
     possible_neighbour_position = [
@@ -59,6 +63,7 @@ def update_matrix(matrix):
     return new_matrix
 
 while True:
+    clean_matrix()
     print_matrix(matrix)
     pause()
     matrix = update_matrix(matrix)
