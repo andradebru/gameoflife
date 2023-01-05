@@ -4,19 +4,28 @@
 # A live cell with more than three live neighbors dies.
 # A dead cell will be brought back to live if it has exactly three live neighbors.
 
+import time
+
 def init_matrix():
     return [
-        [0, 1, 0],
-        [0, 1, 0],
-        [0, 1, 0]
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
 ]
 
 matrix = init_matrix()
 
 def print_matrix(matrix):
-    D = {0: '-', 1: 'O'}
+    D = {0: '\U000026AB', 1: '\U0001F7E1'}
     for i in range(len(matrix)):
         print(''.join([D[e] for e in matrix[i]]))
+
+def pause():
+    time.sleep(0.5)
 
 def count_alive_neighbours(matrix, i, j):
     possible_neighbour_position = [
@@ -38,9 +47,7 @@ def update_matrix(matrix):
         for j in range(len(matrix[i])):
             alive_neighbours = count_alive_neighbours(matrix, i, j)
             if matrix[i][j] == 1:
-                if alive_neighbours == 0 or alive_neighbours == 1:
-                    new_matrix[i][j] = 0
-                elif alive_neighbours >= 4:
+                if alive_neighbours == 0 or alive_neighbours == 1 or alive_neighbours >= 4:
                     new_matrix[i][j] = 0
                 else:
                     new_matrix[i][j] = 1
@@ -53,4 +60,5 @@ def update_matrix(matrix):
 
 while True:
     print_matrix(matrix)
+    pause()
     matrix = update_matrix(matrix)
