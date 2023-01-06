@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tabuleiro">
+        <div class="linha1 linha-tab">
+            <div id="c1l1" class="quadrado vazio"></div>
+            <div id="c2l1" class="quadrado vazio"></div>
+            <div id="c3l1" class="quadrado vazio"></div>
+            <div id="c4l1" class="quadrado vazio"></div>
+            <div id="c5l1" class="quadrado vazio"></div>
+        </div>
+    
+        <div class="linha2 linha-tab">
+            <div id="c1l2" class="quadrado vazio"></div>
+            <div id="c2l2" class="quadrado vazio"></div>
+            <div id="c3l2" class="quadrado vazio"></div>
+            <div id="c4l2" class="quadrado vazio"></div>
+            <div id="c5l2" class="quadrado vazio"></div>
+        </div>
+        
+        <div class="linha3 linha-tab">
+            <div id="c1l3" class="quadrado vazio"></div>
+            <div id="c2l3" class="quadrado vazio"></div>
+            <div id="c3l3" class="quadrado vazio"></div>
+            <div id="c4l3" class="quadrado vazio"></div>
+            <div id="c5l3" class="quadrado vazio"></div>
+        </div>
+    
+        <div class="linha4 linha-tab">
+            <div id="c1l4" class="quadrado vazio"></div>
+            <div id="c2l4" class="quadrado vazio"></div>
+            <div id="c3l4" class="quadrado vazio"></div>
+            <div id="c4l4" class="quadrado vazio"></div>
+            <div id="c5l4" class="quadrado vazio"></div>
+        </div>
+    
+        <div class="linha5 linha-tab">
+            <div id="c1l5" class="quadrado vazio"></div>
+            <div id="c2l5" class="quadrado vazio"></div>
+            <div id="c3l5" class="quadrado vazio"></div>
+            <div id="c4l5" class="quadrado vazio"></div>
+            <div id="c5l5" class="quadrado vazio"></div>
+        </div>
+    
+        <div class="linha6 linha-tab">
+            <div id="c1l6" class="quadrado vazio"></div>
+            <div id="c2l6" class="quadrado vazio"></div>
+            <div id="c3l6" class="quadrado vazio"></div>
+            <div id="c4l6" class="quadrado vazio"></div>
+            <div id="c5l6" class="quadrado vazio"></div>
+        </div>      
+    </div>
+</body>
+</html>
+
+<script>
+    function makeGrid(cols, rows) {
+        let arr = new Array(cols);
+        for (let i=0; i < arr.length; i++) {
+            arr[i] = new Array(rows);
+        }
+        return arr;
+    }
+
+    let grid;
+    let cols = 10;
+    let rows = 10;
+
+    function setup() {
+        grid = makeGrid(cols, rows);
+        for (let i=0; i < cols; i++) {
+            for (let j=0; j < rows; j++) {
+                grid[i][j] = floor(random(2));
+            }
+        }
+    }
+
+</script>
+
+<style>
+.tabuleiro {
+    gap: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    justify-content: bottom;
+}
+
+.quadrado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    width: 58px;
+    height: 58px;
+}
+
+.vazio {
+    border: 2px solid #d3d6da;
+}
+
+.linha-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    column-gap: 5px;
+}
+
+
+</style>

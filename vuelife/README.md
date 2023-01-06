@@ -1,4 +1,4 @@
-# lifeofvue
+# vuelife
 
 ## Project setup
 ```
