@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/gameoflifetext.gif">
+    <img alt="Game of Life shining colorful title" src="./assets/gameoflifetext.gif">
     <LifeGame/>
   </div>
 </template>
@@ -18,17 +18,24 @@ export default {
 </script>
 
 <style>
+img {
+  box-sizing: border-box;
+  width: 20rem;
+  margin-top: 60px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 html {
-  background-color: #1b1b1b;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f8f4ef;
 }
 
 </style>
