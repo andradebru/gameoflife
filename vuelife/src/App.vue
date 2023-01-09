@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/gameoflifetext.gif">
     <LifeGame/>
   </div>
 </template>
@@ -26,4 +26,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+html {
+  background-color: #1b1b1b;
+}
+
 </style>
