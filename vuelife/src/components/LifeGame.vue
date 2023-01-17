@@ -14,9 +14,9 @@
       for (let line_x of [-1, 0, 1]) {
         for (let columns_y of [-1, 0, 1]) {
           if (line_x == 0 && columns_y == 0) continue
-          const vizinho_x = i + line_x;
-          const vizinho_y = j + columns_y;
-          if (grid[vizinho_x]?.[vizinho_y]) {
+          const neighbor_x = i + line_x;
+          const neighbor_y = j + columns_y;
+          if (grid[neighbor_x]?.[neighbor_y]) {
             alives += 1
           }
         }
