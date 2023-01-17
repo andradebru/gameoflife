@@ -1,16 +1,16 @@
 import os
 import time
+import random
 
 def init_matrix():
-    return [
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 1, 0, 0, 0],
-        [0, 0, 0, 1, 0, 0],
-        [0, 1, 1, 1, 0, 0],
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
-    ]
+    l = []
+    grid= []
+    for linha in range(6):
+        for colunas in range(6):
+            l.append(random.randint(0,1)) 
+        grid.append(l)
+        l=[]
+    return grid
 
 matrix = init_matrix()
 
