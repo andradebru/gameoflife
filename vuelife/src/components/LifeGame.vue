@@ -10,22 +10,19 @@
 
 <script>
     function countAliveNeighbours(i, j, grid) {
-        const [M, N] = [grid.length, grid[0].length]
-        const deltaCoord = [
-            [-1, -1], [-1, 0], [-1, 1],
-            [0, -1], [1, 0],
-            [1, -1], [1, 0], [1, 1],
-        ]
-        let neighboursCoord = []
-        for (let k = 0; k < deltaCoord.length; k++) {
-            neighboursCoord.push([i + deltaCoord[k][0], j + deltaCoord[k][1]])
+      let alives = 0;
+      for (let line_x of [-1, 0, 1]) {
+        for (let columns_y of [-1, 0, 1]) {
+          if (line_x == 0 && columns_y == 0) continue
+          const neighbor_x = i + line_x;
+          const neighbor_y = j + columns_y;
+          if (grid[neighbor_x]?.[neighbor_y]) {
+            alives += 1
+          }
         }
-        let aliveNeighboursCoord = neighboursCoord.filter(
-            (e) => e[0] >= 0 && e[0] < M && e[1] >= 0 && e[1] < N && grid[e[0]][e[1]] == 1
-            )
-        return aliveNeighboursCoord.length
+      }
+      return alives;
     }
-
     function nextState(grid) {
         const [M, N] = [grid.length, grid[0].length]
         let newGrid = new Array(M)
