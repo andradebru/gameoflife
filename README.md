@@ -17,7 +17,7 @@ With an initial patern of alive cells, the game develops based on the following 
   - open a terminal, go to the folder python and type `python3 lifeof.py`
   
 ## how to play vue version:
-- Download or clone the repository 
-- execute the file gameof.py located at the vuelife folder:
-  - open a terminal, go to the folder vuelife and type `npm run serve`
-  - click the local hiperlink the terminal will show or type http://localhost:8080/ in browser adress bar.
+- Download or clone the repository
+- open the folder in a terminal
+- execute the command `cd vuelife && npm install && npm run serve`
+- click the local hiperlink the terminal will show or type http://localhost:8080/ in browser adress bar.
